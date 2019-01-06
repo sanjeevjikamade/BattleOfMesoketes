@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Battle Of Mesoketes</string>
+    <string name="day_1_text">Day 1</string>
+    <string name="east_text">East</string>
+    <string name="west_text">West</string>
+    <string name="south_text">South</string>
+    <string name="north_text">North</string>
+    <string name="day_2_text">Day 2</string>
+    <string name="day_3_text">Day 3</string>
+    <string name="btn_txt_get_result">Get Result</string>
+    <string name="instruction_note">* Please put strenths in above Edit Texts. Keep blank for no value.</string>
+</resources>
