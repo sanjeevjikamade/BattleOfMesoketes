@@ -1,180 +1,188 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".BattleActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/lblDay1"
+    <data>
+        <variable
+            name="viewModel"
+            type="com.sanjeev.battleofmesoketes.ViewModel.BattleViewModel"/>
+    </data>
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/day_1_text"
-        android:textSize="@dimen/default_label_size"
-        android:layout_margin="@dimen/default_margin"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent"
+        tools:context=".BattleActivity">
 
-    <LinearLayout
-        android:id="@+id/llDay1"
-        android:layout_below="@id/lblDay1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/lblDay1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/day_1_text"
+            android:textSize="@dimen/default_label_size"
+            android:layout_margin="@dimen/default_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/etEast1"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:hint="@string/east_text"
-            android:layout_height="match_parent" />
+        <LinearLayout
+            android:id="@+id/llDay1"
+            android:layout_below="@id/lblDay1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <EditText
-            android:id="@+id/etWest1"
-            android:layout_width="0dp"
-            android:hint="@string/west_text"
-            android:layout_weight="1"
-            android:layout_height="match_parent" />
+            <EditText
+                android:id="@+id/etEast1"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:hint="@string/east_text"
+                android:layout_height="match_parent" />
 
-        <EditText
-            android:id="@+id/etSouth1"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:hint="@string/south_text"
-            android:layout_height="match_parent" />
+            <EditText
+                android:id="@+id/etWest1"
+                android:layout_width="0dp"
+                android:hint="@string/west_text"
+                android:layout_weight="1"
+                android:layout_height="match_parent" />
 
-        <EditText
-            android:id="@+id/etNorth1"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:hint="@string/north_text"
-            android:layout_height="match_parent" />
+            <EditText
+                android:id="@+id/etSouth1"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:hint="@string/south_text"
+                android:layout_height="match_parent" />
 
-    </LinearLayout>
+            <EditText
+                android:id="@+id/etNorth1"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:hint="@string/north_text"
+                android:layout_height="match_parent" />
 
-    <TextView
-        android:id="@+id/lblDay2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/day_2_text"
-        android:layout_below="@+id/llDay1"
-        android:textSize="@dimen/default_label_size"
-        android:layout_margin="@dimen/default_margin"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/llDay2"
-        android:layout_below="@id/lblDay2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/lblDay2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/day_2_text"
+            android:layout_below="@+id/llDay1"
+            android:textSize="@dimen/default_label_size"
+            android:layout_margin="@dimen/default_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/etEast2"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:hint="@string/east_text"
-            android:layout_height="match_parent" />
+        <LinearLayout
+            android:id="@+id/llDay2"
+            android:layout_below="@id/lblDay2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <EditText
-            android:id="@+id/etWest2"
-            android:layout_width="0dp"
-            android:hint="@string/west_text"
-            android:layout_weight="1"
-            android:layout_height="match_parent" />
+            <EditText
+                android:id="@+id/etEast2"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:hint="@string/east_text"
+                android:layout_height="match_parent" />
 
-        <EditText
-            android:id="@+id/etSouth2"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:hint="@string/south_text"
-            android:layout_height="match_parent" />
+            <EditText
+                android:id="@+id/etWest2"
+                android:layout_width="0dp"
+                android:hint="@string/west_text"
+                android:layout_weight="1"
+                android:layout_height="match_parent" />
 
-        <EditText
-            android:id="@+id/etNorth2"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:hint="@string/north_text"
-            android:layout_height="match_parent" />
+            <EditText
+                android:id="@+id/etSouth2"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:hint="@string/south_text"
+                android:layout_height="match_parent" />
 
-    </LinearLayout>
+            <EditText
+                android:id="@+id/etNorth2"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:hint="@string/north_text"
+                android:layout_height="match_parent" />
 
-    <TextView
-        android:id="@+id/lblDay3"
-        android:layout_below="@+id/llDay2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/day_3_text"
-        android:textSize="@dimen/default_label_size"
-        android:layout_margin="@dimen/default_margin"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/llDay3"
-        android:layout_below="@id/lblDay3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/lblDay3"
+            android:layout_below="@+id/llDay2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/day_3_text"
+            android:textSize="@dimen/default_label_size"
+            android:layout_margin="@dimen/default_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/etEast3"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:hint="@string/east_text"
-            android:layout_height="match_parent" />
+        <LinearLayout
+            android:id="@+id/llDay3"
+            android:layout_below="@id/lblDay3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <EditText
-            android:id="@+id/etWest3"
-            android:layout_width="0dp"
-            android:hint="@string/west_text"
-            android:layout_weight="1"
-            android:layout_height="match_parent" />
+            <EditText
+                android:id="@+id/etEast3"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:hint="@string/east_text"
+                android:layout_height="match_parent" />
 
-        <EditText
-            android:id="@+id/etSouth3"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:hint="@string/south_text"
-            android:layout_height="match_parent" />
+            <EditText
+                android:id="@+id/etWest3"
+                android:layout_width="0dp"
+                android:hint="@string/west_text"
+                android:layout_weight="1"
+                android:layout_height="match_parent" />
 
-        <EditText
-            android:id="@+id/etNorth3"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:hint="@string/north_text"
-            android:layout_height="match_parent" />
+            <EditText
+                android:id="@+id/etSouth3"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:hint="@string/south_text"
+                android:layout_height="match_parent" />
 
-    </LinearLayout>
+            <EditText
+                android:id="@+id/etNorth3"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:hint="@string/north_text"
+                android:layout_height="match_parent" />
 
-    <Button
-        android:id="@+id/btnResult"
-        android:layout_margin="@dimen/default_margin"
-        android:layout_below="@+id/llDay3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_txt_get_result"/>
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/tvResult"
-        android:layout_margin="@dimen/default_margin"
-        android:layout_below="@id/btnResult"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/default_text_size"/>
+        <Button
+            android:id="@+id/btnResult"
+            android:layout_margin="@dimen/default_margin"
+            android:layout_below="@+id/llDay3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_txt_get_result"/>
 
-    <TextView
-        android:layout_alignParentBottom="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/default_note_size"
-        android:textColor="@android:color/holo_red_dark"
-        android:text="@string/instruction_note"/>
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_margin="@dimen/default_margin"
+            android:layout_below="@id/btnResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/default_text_size"/>
 
+        <TextView
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/default_note_size"
+            android:textColor="@android:color/holo_red_dark"
+            android:text="@string/instruction_note"/>
 
-</RelativeLayout>
+    </RelativeLayout>
+</layout>
