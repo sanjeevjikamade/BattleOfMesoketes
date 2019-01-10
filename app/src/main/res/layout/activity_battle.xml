@@ -6,13 +6,12 @@
     <data>
         <variable
             name="viewModel"
-            type="com.sanjeev.battleofmesoketes.ViewModel.BattleViewModel"/>
+            type="com.sanjeev.battleofmesoketes.viewmodel.BattleViewModel"/>
     </data>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".BattleActivity">
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/lblDay1"
@@ -164,6 +163,7 @@
             android:id="@+id/btnResult"
             android:layout_margin="@dimen/default_margin"
             android:layout_below="@+id/llDay3"
+            android:onClick="@{()-> viewModel.onResultClicked()}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/btn_txt_get_result"/>

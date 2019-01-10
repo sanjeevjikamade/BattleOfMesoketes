@@ -1,4 +1,4 @@
-package com.sanjeev.battleofmesoketes.ViewModel;
+package com.sanjeev.battleofmesoketes.viewmodel;
 
 import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;

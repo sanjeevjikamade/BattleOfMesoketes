@@ -7,8 +7,8 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.sanjeev.battleofmesoketes.Interface.BattleResultCallback;
-import com.sanjeev.battleofmesoketes.ViewModel.BattleVewModelFactory;
-import com.sanjeev.battleofmesoketes.ViewModel.BattleViewModel;
+import com.sanjeev.battleofmesoketes.viewmodel.BattleVewModelFactory;
+import com.sanjeev.battleofmesoketes.viewmodel.BattleViewModel;
 import com.sanjeev.battleofmesoketes.utils.BattleUtils;
 import com.sanjeev.battleofmesoketes.databinding.ActivityBattleBinding;
 
@@ -24,9 +24,10 @@ public class BattleActivity extends AppCompatActivity implements BattleResultCal
 
         Toast.makeText(this, "REsult::"+(new BattleUtils().getBattleResult(battlePoints)), Toast.LENGTH_SHORT).show();
 
-        ActivityBattleBinding activityBattleBinding = DataBindingUtil.setContentView(this, R.layout.activity_battle);
-        activityBattleBinding.setViewModel(ViewModelProviders.of(this, new BattleVewModelFactory(this))
+        ActivityBattleBinding activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_battle);
+        activityMainBinding.setViewModel(ViewModelProviders.of(this, new BattleVewModelFactory(this))
                 .get(BattleViewModel.class));
+
     }
 
     @Override

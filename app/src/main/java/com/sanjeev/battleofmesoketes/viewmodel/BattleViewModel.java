@@ -1,11 +1,13 @@
-package com.sanjeev.battleofmesoketes.ViewModel;
+package com.sanjeev.battleofmesoketes.viewmodel;
 
 import android.arch.lifecycle.ViewModel;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.widget.Toast;
 
 import com.sanjeev.battleofmesoketes.Interface.BattleResultCallback;
 import com.sanjeev.battleofmesoketes.model.Battle;
+import com.sanjeev.battleofmesoketes.utils.BattleUtils;
 
 
 public class BattleViewModel extends ViewModel {
@@ -250,9 +252,14 @@ public class BattleViewModel extends ViewModel {
         };
     }
 
+    public void onResultClicked() {
+        Integer[][] battlePoints = {{3, 4, 0, 2},
+                {3, 2, 4, 0},
+                {2, 0, 5, 3}};
 
-    /*public int getBattleResult(){
-        new BattleUtils().getBattleResult();
+        int test = battle.getBattleResult(battlePoints);
+        battle.setTvResult(battle.getBattleResult(battlePoints)+"");
     }
-*/
+
+
 }

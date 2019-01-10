@@ -2,10 +2,13 @@ package com.sanjeev.battleofmesoketes.model;
 
 import android.databinding.Bindable;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.sanjeev.battleofmesoketes.utils.BattleUtils;
 
 public class Battle {
 
@@ -14,11 +17,13 @@ public class Battle {
 
     @NonNull
     String etEast1, etEast2, etEast3, etNorth1, etNorth2, etNorth3, etSouth, etSouth2, etSouth3, etWest1, etWest2, etWest3;
+    @NonNull
+    String tvResult;
 
     public Battle() {
     }
 
-    public Battle(@NonNull String etEast1, @NonNull String etEast2, @NonNull String etEast3, @NonNull String etNorth1, @NonNull String etNorth2, @NonNull String etNorth3, @NonNull String etSouth, @NonNull String etSouth2, @NonNull String etSouth3, @NonNull String etWest1, @NonNull String etWest2, @NonNull String etWest3) {
+    public Battle(@NonNull String etEast1, @NonNull String etEast2, @NonNull String etEast3, @NonNull String etNorth1, @NonNull String etNorth2, @NonNull String etNorth3, @NonNull String etSouth, @NonNull String etSouth2, @NonNull String etSouth3, @NonNull String etWest1, @NonNull String etWest2, @NonNull String etWest3, @Nullable String tvResult) {
         this.etEast1 = etEast1;
         this.etEast2 = etEast2;
         this.etEast3 = etEast3;
@@ -31,6 +36,7 @@ public class Battle {
         this.etWest1 = etWest1;
         this.etWest2 = etWest2;
         this.etWest3 = etWest3;
+        this.tvResult = tvResult;
     }
 
     @NonNull
@@ -139,5 +145,20 @@ public class Battle {
 
     public void setEtWest3(@NonNull String etWest3) {
         this.etWest3 = etWest3;
+    }
+
+    @NonNull
+    public String getTvResult() {
+        return tvResult;
+    }
+
+    public void setTvResult(@NonNull String tvResult) {
+        this.tvResult = tvResult;
+    }
+
+    public int getBattleResult(Integer[][] battlePoints){
+
+        return new BattleUtils().getBattleResult(battlePoints);
+
     }
 }
