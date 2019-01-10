@@ -6,6 +6,10 @@ import android.support.annotation.NonNull;
 
 import com.sanjeev.battleofmesoketes.Interface.BattleResultCallback;
 
+/**
+ * author::Sanjeev Jikamade
+ */
+
 public class BattleVewModelFactory extends ViewModelProvider.NewInstanceFactory {
 
     BattleResultCallback battleResultCallback;

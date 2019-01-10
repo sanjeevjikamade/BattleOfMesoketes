@@ -5,11 +5,14 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.Toast;
 
+import com.sanjeev.battleofmesoketes.Data.InputData;
 import com.sanjeev.battleofmesoketes.Interface.BattleResultCallback;
 import com.sanjeev.battleofmesoketes.model.Battle;
 import com.sanjeev.battleofmesoketes.utils.BattleUtils;
 
-
+/**
+ * author::Sanjeev Jikamade
+ */
 public class BattleViewModel extends ViewModel {
 
     BattleResultCallback battleResultCallback;
@@ -35,7 +38,9 @@ public class BattleViewModel extends ViewModel {
 
             @Override
             public void afterTextChanged(Editable s) {
-                battle.setEtEast1(s.toString());
+                try{
+                battle.setEtEast1(Integer.parseInt(s.toString()));
+                }catch (Exception ex){ex.printStackTrace();}
             }
         };
     }
@@ -54,7 +59,9 @@ public class BattleViewModel extends ViewModel {
 
             @Override
             public void afterTextChanged(Editable s) {
-                battle.setEtEast2(s.toString());
+                try{
+                battle.setEtEast2(Integer.parseInt(s.toString()));
+            }catch (Exception ex){ex.printStackTrace();}
             }
         };
     }
@@ -73,7 +80,9 @@ public class BattleViewModel extends ViewModel {
 
             @Override
             public void afterTextChanged(Editable s) {
-                battle.setEtEast3(s.toString());
+                try{
+                battle.setEtEast3(Integer.parseInt(s.toString()));
+                }catch (Exception ex){ex.printStackTrace();}
             }
         };
     }
@@ -93,7 +102,9 @@ public class BattleViewModel extends ViewModel {
 
             @Override
             public void afterTextChanged(Editable s) {
-                battle.setEtWest1(s.toString());
+                try {
+                    battle.setEtWest1(Integer.parseInt(s.toString()));
+                }catch (Exception ex){ex.printStackTrace();}
             }
         };
     }
@@ -112,7 +123,9 @@ public class BattleViewModel extends ViewModel {
 
             @Override
             public void afterTextChanged(Editable s) {
-                battle.setEtWest2(s.toString());
+                try{
+                battle.setEtWest2(Integer.parseInt(s.toString()));
+                }catch (Exception ex){ex.printStackTrace();}
             }
         };
     }
@@ -131,7 +144,9 @@ public class BattleViewModel extends ViewModel {
 
             @Override
             public void afterTextChanged(Editable s) {
-                battle.setEtWest3(s.toString());
+                try{
+                battle.setEtWest3(Integer.parseInt(s.toString()));
+                }catch (Exception ex){ex.printStackTrace();}
             }
         };
     }
@@ -151,7 +166,9 @@ public class BattleViewModel extends ViewModel {
 
             @Override
             public void afterTextChanged(Editable s) {
-                battle.setEtNorth1(s.toString());
+                try{
+                battle.setEtNorth1(Integer.parseInt(s.toString()));
+                }catch (Exception ex){ex.printStackTrace();}
             }
         };
     }
@@ -170,7 +187,9 @@ public class BattleViewModel extends ViewModel {
 
             @Override
             public void afterTextChanged(Editable s) {
-                battle.setEtNorth2(s.toString());
+                try{
+                battle.setEtNorth2(Integer.parseInt(s.toString()));
+                }catch (Exception ex){ex.printStackTrace();}
             }
         };
     }
@@ -189,7 +208,9 @@ public class BattleViewModel extends ViewModel {
 
             @Override
             public void afterTextChanged(Editable s) {
-                battle.setEtNorth3(s.toString());
+                try {
+                    battle.setEtNorth3(Integer.parseInt(s.toString()));
+                }catch (Exception ex){ex.printStackTrace();}
             }
         };
     }
@@ -209,7 +230,9 @@ public class BattleViewModel extends ViewModel {
 
             @Override
             public void afterTextChanged(Editable s) {
-                battle.setEtSouth(s.toString());
+                try{
+                battle.setEtSouth(Integer.parseInt(s.toString()));
+                }catch (Exception ex){ex.printStackTrace();}
             }
         };
     }
@@ -228,7 +251,9 @@ public class BattleViewModel extends ViewModel {
 
             @Override
             public void afterTextChanged(Editable s) {
-                battle.setEtSouth2(s.toString());
+                try{
+                battle.setEtSouth2(Integer.parseInt(s.toString()));
+                }catch (Exception ex){ex.printStackTrace();}
             }
         };
     }
@@ -247,18 +272,36 @@ public class BattleViewModel extends ViewModel {
 
             @Override
             public void afterTextChanged(Editable s) {
-                battle.setEtSouth3(s.toString());
+                try{
+                battle.setEtSouth3(Integer.parseInt(s.toString()));
+                }catch (Exception ex){ex.printStackTrace();}
             }
         };
     }
 
-    public void onResultClicked() {
-        Integer[][] battlePoints = {{3, 4, 0, 2},
-                {3, 2, 4, 0},
-                {2, 0, 5, 3}};
+  /*  public void onFillDataClicked() {
+        try {
+            battle.fillData();
+        }catch (Exception ex){ex.printStackTrace();}
 
-        int test = battle.getBattleResult(battlePoints);
-        battle.setTvResult(battle.getBattleResult(battlePoints)+"");
+    }*/
+
+
+    public void onResultClicked() {
+        try {
+       /* CASE1::{{3, 4, 0, 2},
+                {3, 2, 4, 0},
+                {2, 0, 5, 3}};*/
+
+
+            if (battle.validateData()) {
+                int testResult = battle.getBattleResult(battle.getBattleData());
+                battleResultCallback.onSuccess(testResult);
+            } else {
+                battleResultCallback.onFailure("Invalid Data entered");
+            }
+        }catch (Exception ex){ex.printStackTrace();}
+
     }
 
 

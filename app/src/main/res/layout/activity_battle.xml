@@ -36,6 +36,8 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:hint="@string/east_text"
+                android:inputType="number"
+                app:addTextChangedListener="@{viewModel.getEtEast1TextWatcher}"
                 android:layout_height="match_parent" />
 
             <EditText
@@ -43,12 +45,16 @@
                 android:layout_width="0dp"
                 android:hint="@string/west_text"
                 android:layout_weight="1"
+                android:inputType="number"
+                app:addTextChangedListener="@{viewModel.getEtWest1TextWatcher}"
                 android:layout_height="match_parent" />
 
             <EditText
                 android:id="@+id/etSouth1"
                 android:layout_width="0dp"
                 android:layout_weight="1"
+                android:inputType="number"
+                app:addTextChangedListener="@{viewModel.getEtSouth1TextWatcher}"
                 android:hint="@string/south_text"
                 android:layout_height="match_parent" />
 
@@ -56,6 +62,8 @@
                 android:id="@+id/etNorth1"
                 android:layout_width="0dp"
                 android:layout_weight="1"
+                android:inputType="number"
+                app:addTextChangedListener="@{viewModel.getEtNorth1TextWatcher}"
                 android:hint="@string/north_text"
                 android:layout_height="match_parent" />
 
@@ -84,6 +92,8 @@
                 android:id="@+id/etEast2"
                 android:layout_width="0dp"
                 android:layout_weight="1"
+                android:inputType="number"
+                app:addTextChangedListener="@{viewModel.getEtEast2TextWatcher}"
                 android:hint="@string/east_text"
                 android:layout_height="match_parent" />
 
@@ -92,12 +102,16 @@
                 android:layout_width="0dp"
                 android:hint="@string/west_text"
                 android:layout_weight="1"
+                android:inputType="number"
+                app:addTextChangedListener="@{viewModel.getEtWest2TextWatcher}"
                 android:layout_height="match_parent" />
 
             <EditText
                 android:id="@+id/etSouth2"
                 android:layout_width="0dp"
                 android:layout_weight="1"
+                android:inputType="number"
+                app:addTextChangedListener="@{viewModel.getEtSouth2TextWatcher}"
                 android:hint="@string/south_text"
                 android:layout_height="match_parent" />
 
@@ -105,6 +119,8 @@
                 android:id="@+id/etNorth2"
                 android:layout_width="0dp"
                 android:layout_weight="1"
+                android:inputType="number"
+                app:addTextChangedListener="@{viewModel.getEtNorth2TextWatcher}"
                 android:hint="@string/north_text"
                 android:layout_height="match_parent" />
 
@@ -133,6 +149,8 @@
                 android:id="@+id/etEast3"
                 android:layout_width="0dp"
                 android:layout_weight="1"
+                android:inputType="number"
+                app:addTextChangedListener="@{viewModel.getEtEast3TextWatcher}"
                 android:hint="@string/east_text"
                 android:layout_height="match_parent" />
 
@@ -141,12 +159,16 @@
                 android:layout_width="0dp"
                 android:hint="@string/west_text"
                 android:layout_weight="1"
+                android:inputType="number"
+                app:addTextChangedListener="@{viewModel.getEtWest3TextWatcher}"
                 android:layout_height="match_parent" />
 
             <EditText
                 android:id="@+id/etSouth3"
                 android:layout_width="0dp"
                 android:layout_weight="1"
+                android:inputType="number"
+                app:addTextChangedListener="@{viewModel.getEtSouth3TextWatcher}"
                 android:hint="@string/south_text"
                 android:layout_height="match_parent" />
 
@@ -154,6 +176,8 @@
                 android:id="@+id/etNorth3"
                 android:layout_width="0dp"
                 android:layout_weight="1"
+                android:inputType="number"
+                app:addTextChangedListener="@{viewModel.getEtNorth3TextWatcher}"
                 android:hint="@string/north_text"
                 android:layout_height="match_parent" />
 

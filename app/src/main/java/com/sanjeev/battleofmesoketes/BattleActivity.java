@@ -12,17 +12,14 @@ import com.sanjeev.battleofmesoketes.viewmodel.BattleViewModel;
 import com.sanjeev.battleofmesoketes.utils.BattleUtils;
 import com.sanjeev.battleofmesoketes.databinding.ActivityBattleBinding;
 
+/**
+ * author::Sanjeev Jikamade
+ */
 public class BattleActivity extends AppCompatActivity implements BattleResultCallback {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        Integer[][] battlePoints = {{3, 4, 0, 2},
-                {3, 2, 4, 0},
-                {2, 0, 5, 3}};
-
-        Toast.makeText(this, "REsult::"+(new BattleUtils().getBattleResult(battlePoints)), Toast.LENGTH_SHORT).show();
 
         ActivityBattleBinding activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_battle);
         activityMainBinding.setViewModel(ViewModelProviders.of(this, new BattleVewModelFactory(this))
@@ -32,6 +29,12 @@ public class BattleActivity extends AppCompatActivity implements BattleResultCal
 
     @Override
     public void onSuccess(int result) {
+        Toast.makeText(this, "Successful Battles:: "+result, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onFailure(String error) {
+        Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
 
     }
 }
