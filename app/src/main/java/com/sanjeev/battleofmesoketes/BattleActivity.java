@@ -2,6 +2,7 @@ package com.sanjeev.battleofmesoketes;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.databinding.DataBindingUtil;
+import android.graphics.ColorSpace;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -16,12 +17,12 @@ import com.sanjeev.battleofmesoketes.databinding.ActivityBattleBinding;
  * author::Sanjeev Jikamade
  */
 public class BattleActivity extends AppCompatActivity implements BattleResultCallback {
-
+    ActivityBattleBinding activityMainBinding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        ActivityBattleBinding activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_battle);
+        activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_battle);
         activityMainBinding.setViewModel(ViewModelProviders.of(this, new BattleVewModelFactory(this))
                 .get(BattleViewModel.class));
 
@@ -35,6 +36,5 @@ public class BattleActivity extends AppCompatActivity implements BattleResultCal
     @Override
     public void onFailure(String error) {
         Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
-
     }
 }

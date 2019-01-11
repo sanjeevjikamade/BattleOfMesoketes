@@ -294,12 +294,10 @@ public class BattleViewModel extends ViewModel {
                 {2, 0, 5, 3}};*/
 
 
-            if (battle.validateData()) {
-                int testResult = battle.getBattleResult(battle.getBattleData());
-                battleResultCallback.onSuccess(testResult);
-            } else {
-                battleResultCallback.onFailure("Invalid Data entered");
-            }
+        int testResult = battle.getBattleResult(battle.getBattleData());
+        battle.setResult(testResult+"");
+        battleResultCallback.onSuccess(testResult);
+
         }catch (Exception ex){ex.printStackTrace();}
 
     }

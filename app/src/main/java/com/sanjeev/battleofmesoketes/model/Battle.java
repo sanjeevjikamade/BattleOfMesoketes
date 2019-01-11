@@ -25,12 +25,12 @@ public class Battle {
     @NonNull
     int etEast1, etEast2, etEast3, etNorth1, etNorth2, etNorth3, etSouth, etSouth2, etSouth3, etWest1, etWest2, etWest3;
     @NonNull
-    String tvResult;
+    String result;
 
     public Battle() {
     }
 
-    public Battle(@NonNull int etEast1, @NonNull int etEast2, @NonNull int etEast3, @NonNull int etNorth1, @NonNull int etNorth2, @NonNull int etNorth3, @NonNull int etSouth, @NonNull int etSouth2, @NonNull int etSouth3, @NonNull int etWest1, @NonNull int etWest2, @NonNull int etWest3, @Nullable String tvResult) {
+    public Battle(@NonNull int etEast1, @NonNull int etEast2, @NonNull int etEast3, @NonNull int etNorth1, @NonNull int etNorth2, @NonNull int etNorth3, @NonNull int etSouth, @NonNull int etSouth2, @NonNull int etSouth3, @NonNull int etWest1, @NonNull int etWest2, @NonNull int etWest3, @Nullable String result) {
         this.etEast1 = etEast1;
         this.etEast2 = etEast2;
         this.etEast3 = etEast3;
@@ -43,7 +43,7 @@ public class Battle {
         this.etWest1 = etWest1;
         this.etWest2 = etWest2;
         this.etWest3 = etWest3;
-        this.tvResult = tvResult;
+        this.result = result;
     }
 
     @NonNull
@@ -155,18 +155,21 @@ public class Battle {
     }
 
     @NonNull
-    public String getTvResult() {
-        return tvResult;
+    public String getResult() {
+        return result;
     }
 
-    public void setTvResult(@NonNull String tvResult) {
-        this.tvResult = tvResult;
+    public void setResult(@NonNull String result) {
+        this.result = result;
     }
 
     public int getBattleResult(Integer[][] battlePoints){
         try{
 
-        return new BattleUtils().getBattleResult(battlePoints);
+            int result = new BattleUtils().getBattleResult(battlePoints);
+            setResult(result+"");
+
+            return result;
         }catch (Exception ex){ex.printStackTrace();}
 
         return 0;
@@ -183,8 +186,7 @@ public class Battle {
         return null;
     }
 
-
-    public boolean validateData(){
+    /*public boolean validateData(){
         try{
             return !TextUtils.isEmpty(getEtEast1()+"") && !TextUtils.isEmpty(getEtEast2()+"") && !TextUtils.isEmpty(getEtEast3()+"")
                     && !TextUtils.isEmpty(getEtWest1()+"") && !TextUtils.isEmpty(getEtWest2()+"") && !TextUtils.isEmpty(getEtWest3()+"")
@@ -192,7 +194,7 @@ public class Battle {
                     && !TextUtils.isEmpty(getEtNorth1()+"") && !TextUtils.isEmpty(getEtNorth2()+"") && !TextUtils.isEmpty(getEtNorth3()+"");
         }catch (Exception ex){ex.printStackTrace();}
         return false;
-    }
+    }*/
 
 /*    public void fillData(){
 
