@@ -1,5 +1,13 @@
 # Battle Of Mesoketes
 
+This repository is a solution to the Battle of Mesoketes problem. 
+### Technical Description: 
+1. Technology used: Android - Java
+1. Minimum SDK: 19
+1. Architecture used: MVVM with data binding
+1. Testing: JUnit with Espresso.
+
+
 ## Problem Description:
 
 You are watching the battle of Mesoketes, that had a big wall that covered the
@@ -64,3 +72,4 @@ Day 3: T1 - W - 2; T1 - W - 4: T2 - N - 3: T2 - S - 4
 ````
 7
 ````
+
