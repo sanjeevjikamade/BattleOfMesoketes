@@ -31,6 +31,7 @@ public class BattleActivity extends AppCompatActivity implements BattleResultCal
     @Override
     public void onSuccess(int result) {
         Toast.makeText(this, "Successful Battles:: "+result, Toast.LENGTH_SHORT).show();
+        activityMainBinding.tvResult.setText(""+result);
     }
 
     @Override
